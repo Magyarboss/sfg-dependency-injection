@@ -1,9 +1,6 @@
 package guru.springframework.sfgdependencyinjection;
 
-import guru.springframework.sfgdependencyinjection.controllers.ConstructorInjectedController;
-import guru.springframework.sfgdependencyinjection.controllers.MyController;
-import guru.springframework.sfgdependencyinjection.controllers.PropertyInjectionController;
-import guru.springframework.sfgdependencyinjection.controllers.SetterInjectedController;
+import guru.springframework.sfgdependencyinjection.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -45,6 +42,12 @@ public class SfgDependencyInjectionApplication {
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 
 		System.out.println(constructorInjectedController.getGreeting());
+
+		System.out.println("-----------Spanish/Eng-Service");
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+
+		System.out.println(i18nController.sayHello());
 
 	}
 
